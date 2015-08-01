@@ -19,6 +19,7 @@ void bigint_print(bigint *a){
 }
 int bigint_digits_len(bigint *a){
     assert(a);
+    if(!a->size) return 1;
     char temp[25];
     return sprintf(temp,"%lld",a->digits[a->size-1])+(a->size-1)*POW_BASE;
 }
@@ -119,4 +120,10 @@ ll bigint_divmod_ll(bigint *a,ll x,bigint *c){
         --c->size;
     }
     return rem;
+}
+
+int bigint_is_zero(bigint *a){
+    
+    assert(a);
+    return a->size==0 || (a->size==1 &&a->digits[0]==0);
 }

@@ -38,6 +38,7 @@ void bigint_init_ll(bigint *,ll);
 void bigint_add( bigint *, bigint *,bigint *);
 void bigint_mul_ll( bigint *, ll,bigint *);
 ll bigint_divmod_ll(bigint *,ll,bigint *);
+int bigint_is_zero(bigint *a);
 
 
 
